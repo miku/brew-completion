@@ -1,5 +1,4 @@
-Bash completion for Homebrew package manager,
-http://mxcl.github.com/homebrew/
+Bash completion for Homebrew package manager (http://mxcl.github.com/homebrew/).
 
 To enable, just source it in your `bashrc` or `profile`
 
