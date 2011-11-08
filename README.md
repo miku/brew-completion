@@ -1,3 +1,6 @@
+Homebrew Completion
+===================
+
 Bash completion for the [homebrew package manager](http://mxcl.github.com/homebrew/).
 
 To enable, just source it in your `bashrc` or `profile`:
