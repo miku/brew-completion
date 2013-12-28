@@ -26,11 +26,11 @@ _brew()
     opts=`brew commands|sed -E -e 's/(Built-in|External) commands//g'|grep -v '^$'`
 
     case "${prev}" in
-        search|update|home|edit)
+        search|update|home|edit|versions|bottle|cat)
             _brew_formula "$cur"
             return 0
             ;;
-        uninstall|reinstall|test|upgrade)
+        uninstall|reinstall|test|upgrade|link|unlink)
             _brew_formula_installed "$cur"
             return 0
             ;;
