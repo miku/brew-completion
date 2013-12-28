@@ -30,14 +30,17 @@ _brew()
             _brew_formula "$cur"
             return 0
             ;;
-        uninstall)
+        uninstall|reinstall|test|upgrade)
             _brew_formula_installed "$cur"
             return 0
             ;;
         install)
             if [[ "$cur" == -* ]]; then
-                COMPREPLY=( $(compgen -W '--HEAD --debug --interactive
-                    --verbose --ignore-dependencies' -- "$cur") )
+                COMPREPLY=( $(compgen -W '
+                    --debug --devel --build-from-source
+                    --cc= --env=std --env=super --fresh --interactive
+                    --verbose --only-dependencies --ignore-dependencies
+                    --git' -- "$cur") )
             else
                 _brew_formula "$cur"
             fi
@@ -69,7 +72,9 @@ _brew()
     
     case "${prev}" in
         # post-install, post-info
-        --debug|--interactive|--verbose|--ignore-dependencies|--github)
+        --debug|--devel|--build-from-source|--cc=|--env=std|--env=super|\
+        --fresh|--interactive|--verbose|--only-dependencies|\
+        --ignore-dependencies|--git)
             _brew_formula "$cur"
             return 0
             ;;
