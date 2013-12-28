@@ -23,7 +23,7 @@ _brew()
     
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts=`brew commands`
+    opts=`brew commands|sed -E -e 's/(Built-in|External) commands//g'|grep -v '^$'`
 
     case "${prev}" in
         search|update|home|edit)
