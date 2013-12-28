@@ -23,9 +23,7 @@ _brew()
     
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts="audit cat cleanup create deps doctor edit fetch home info install \
-    link list ln log man missing options outdated prune remove search server \
-    test uninstall unlink update upgrade uses versions which"
+    opts=`brew commands`
 
     case "${prev}" in
         search|update|home|edit)
