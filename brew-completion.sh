@@ -4,7 +4,7 @@ _brew_formula()
 {
     local formulae
     
-    formulae=`brew search`
+    formulae=$(brew search)
     COMPREPLY=( $(compgen -W '$formulae' -- "$1") )
 }
 
@@ -12,7 +12,7 @@ _brew_formula_installed()
 {
     local formulae
 
-    formulae=`brew list`
+    formulae=$(brew list)
     COMPREPLY=( $(compgen -W '$formulae' -- "$1") )
 }
 
@@ -23,7 +23,7 @@ _brew()
     
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts=`brew commands|sed -E -e 's/(Built-in|External) commands//g'|grep -v '^$'`
+    opts=$(brew commands|sed -E -e 's/(Built-in|External) commands//g'|grep -v '^$')
 
     case "${prev}" in
         search|update|home|edit|versions|bottle|cat)
@@ -91,3 +91,4 @@ _brew()
 
 }
 complete -F _brew brew
+
