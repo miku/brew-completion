@@ -1,5 +1,11 @@
-Homebrew Completion
-===================
+Homebrew Completion (OBSOLETE)
+==============================
+
+----
+
+**OBSOLETE**, see: https://github.com/Homebrew/brew/tree/master/completions
+
+----
 
 Bash completion for the [homebrew package manager](http://mxcl.github.com/homebrew/).
 
